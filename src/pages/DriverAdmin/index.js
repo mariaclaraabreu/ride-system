@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import firebase from '../../services/api'
-import Button from '../../components/Button'
 import OfferItem from  '../../components/OfferItem';
 import './styles.css';
 
@@ -11,16 +9,16 @@ const DriverAdmin = () => {
   const [rides, setRides] = useState([])
   const [filteredRides, setFilteredRides] = useState([]);
   const [candidates, setCandidates] = useState([])
-  const [isUpdate, setIsUpdate] = useState(false)
-  const [id, setId] = useState('')
-  const [typeUser, setTypeUser] = useState('')
-  const [whither, setWhither] = useState('')
-  const [day, setDay] = useState('')
-  const [month, setMonth] = useState('')
-  const [year, setYear] = useState('')
+
 
   async function handleAskRide(id) {
-
+    firebase
+      .firestore()  
+      .collection("rides")
+      .doc(id)
+      .update({
+        candidate: 'User Ci3jriBam5aobSBB0kRK applied for the ride'
+    });
   }
 
   async function handleSearchRide(search) {
