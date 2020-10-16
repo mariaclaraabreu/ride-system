@@ -10,14 +10,19 @@ const Header = (props) => (
           <img className="logo" src={props.logo} alt={props.logoAlt}/>
         </button>
       </Link>
-      <Link to="/driver-admin">
+      <Link to="/ride-register">
         <button className="oc-button">
           {props.nameLinkOne}
         </button>
       </Link>
-      <Link to="/passenger-admin">
+      <Link to="/driver-admin">
         <button className="oc-button">
           {props.nameLinkTwo}
+        </button>
+      </Link>
+      <Link to="/passenger-admin">
+        <button className="oc-button">
+          {props.nameLinkThree}
         </button>
       </Link>
     </div>

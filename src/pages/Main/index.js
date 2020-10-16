@@ -8,8 +8,9 @@ export default class Main extends Component {
       <div className="main">
         <Header 
           linkHome="/"
-          nameLinkOne="Driver"
-          nameLinkTwo="Passenger"
+          nameLinkOne="Register ride"
+          nameLinkTwo="Driver"
+          nameLinkThree="Passenger"
         />
         <footer>
           @2020 Created with love by Maria Clara &#10083;
