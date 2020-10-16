@@ -18,22 +18,23 @@ const RideRegister = () => {
   useEffect(() => {
     firebase
       .firestore()
-      .collection('offers')
+      .collection('rides')
       .get()
       .catch((err) => {
         console.log(err)
       })
   }, [])
 
-  async function handleAddOffer(e) {
+  async function handleAddRide(e) {
     e.preventDefault()
     try {
-      firebase.firestore().collection('offers').add({
+      firebase.firestore().collection('rides').add({
         typeUser,
         whither,
         day,
         month,
         year,
+        candidate: '',
       })
 
       history.push('/')
@@ -86,9 +87,9 @@ const RideRegister = () => {
               />
             </form>
             <Button
-              name="Add Offer"
+              name="Add Ride"
               className="blue"
-              onClick={handleAddOffer}
+              onClick={handleAddRide}
             />
 
           </div>
